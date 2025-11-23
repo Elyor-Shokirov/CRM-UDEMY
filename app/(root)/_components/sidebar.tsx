@@ -16,8 +16,7 @@ function Sidebar({ toggle }: SidebarProps) {
 		dark:border-b-gray-700 border-b-gray-200 
 		border fixed top-0 left-0 mt-[10vh] 
 		overflow-y-auto scrollbar-thin 
-		transition-all duration-500 ease-in-out
-
+		transition-all duration-500 ease-in-out z-30
 		${toggle ? 'translate-x-0' : '-translate-x-full'}  /* mobile/tablet toggle */
 		lg:translate-x-0  /* desktopda sidebar doim ochiq */
 	`}

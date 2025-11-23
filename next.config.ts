@@ -1,8 +1,18 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
-};
+	reactCompiler: true,
+	turbopack: {
+		rules: {
+			'*.svg': {
+				loaders: ['@svgr/webpack'],
+				as: '*.js',
+			},
+		},
+	},
+	images: {
+		domains: ['media.graphassets.com', 'genprofile.ai', 'api.dicebear.com'],
+	},
+}
 
-export default nextConfig;
+export default nextConfig

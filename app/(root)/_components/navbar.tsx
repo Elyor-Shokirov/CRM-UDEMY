@@ -8,7 +8,7 @@ import TranslateButton from './translate-button'
 
 function Navbar({ onToggle }: HeaderProp) {
 	return (
-		<div className='w-full h-[10vh] px-10 flex items-center border dark:border-b-gray-700 border-b-gray-200 fixed  top-0 left-0 right-0 dark:bg-[#171923] bg-gray-50'>
+		<div className='w-full h-[10vh] px-10 flex items-center border dark:border-b-gray-700 border-b-gray-200 fixed  top-0 left-0 right-0 dark:bg-[#171923] bg-gray-50 z-60'>
 			<div className='flex justify-between w-full'>
 				<div className='flex items-center gap-2'>
 					<BiMenuAltLeft
