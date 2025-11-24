@@ -17,7 +17,7 @@ function Categories() {
 				subtitle='Learn our courses with high rating'
 			/>
 			<Carousel
-				className='w-full mt-4'
+				className='min-w-full mt-4'
 				opts={{ loop: true }}
 				plugins={[
 					Autoplay({

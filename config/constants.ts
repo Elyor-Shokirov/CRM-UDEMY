@@ -17,9 +17,14 @@ import { SiAmd, SiCisco, SiLogitech, SiSpotify } from 'react-icons/si'
 import AnnouncementIcons from '../src/icons/announcement.svg'
 import CodingIcons from '../src/icons/coding.svg'
 import DesignIcon from '../src/icons/design.svg'
+import FinishRightIcon from '../src/icons/finish-right-line.svg'
 import LaptopIcon from '../src/icons/laptop.svg'
+import OnlineCourseIcon from '../src/icons/online-course.svg'
+import OnlineLearningIcon from '../src/icons/online-learning.svg'
+import OnlineStudentIcon from '../src/icons/online-studen.svg'
 import PersonIcon from '../src/icons/person.svg'
 import PrintIcon from '../src/icons/print.svg'
+import RightLineIcon from '../src/icons/right-line.svg'
 
 // Navigation menu structure
 export const navigation = [
@@ -62,3 +67,11 @@ export const trustedCompanies = [
 	SiLogitech,
 	SiSpotify,
 ] as const
+
+export const OnlineTraningData = [
+	{ title: 'Signup Platform', icon: OnlineCourseIcon },
+	{ icon: RightLineIcon },
+	{ title: 'Find Courses', icon: OnlineLearningIcon },
+	{ icon: FinishRightIcon },
+	{ title: 'Learn Relaxing', icon: OnlineStudentIcon },
+]

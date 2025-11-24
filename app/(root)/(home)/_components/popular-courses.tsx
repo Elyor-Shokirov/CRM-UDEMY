@@ -25,7 +25,7 @@ function PopularCourses() {
 				subtitle='10,000+ unique online course list designs'
 			/>
 			<Carousel
-				className='w-full mt-4'
+				className='min-w-full mt-4'
 				opts={{ loop: true }}
 				plugins={[
 					Autoplay({
@@ -73,16 +73,27 @@ function PopularCourses() {
 									</div>
 									<Separator className='mt-2' />
 									<div className='flex justify-between items-center'>
-										<Avatar>
-											<AvatarImage
-												src={item.author.avatar}
-												alt={item.author.firstName}
-											/>
-											<AvatarFallback>
-												{item.author.firstName.charAt(0)}
-												{item.author.lastName.charAt(0)}
-											</AvatarFallback>
-										</Avatar>
+										<div className='flex gap-1.5 items-center'>
+											<Avatar>
+												<AvatarImage
+													src={item.author.avatar}
+													alt={item.author.firstName}
+												/>
+												<AvatarFallback>
+													{item.author.firstName.charAt(0)}
+													{item.author.lastName.charAt(0)}
+												</AvatarFallback>
+											</Avatar>
+											<p>
+												{item.author.firstName} {item.author.lastName[0]}
+											</p>
+										</div>
+										<p>
+											{item.price.toLocaleString('en-US', {
+												style: 'currency',
+												currency: 'USD',
+											})}
+										</p>
 									</div>
 								</div>
 							</div>
@@ -109,8 +120,8 @@ const data: CourseType[] = [
 		reviewAvarage: 4.5,
 		reviewCount: 200,
 		author: {
-			firstName: 'Samar',
-			lastName: 'Badriddinov',
+			firstName: 'Elyor',
+			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=%2Fimg%2Fsample%2F1414a52e-21fe-4e92-9ea6-93ff49f81011.jpeg&w=828&q=100',
 		},
@@ -125,8 +136,8 @@ const data: CourseType[] = [
 		reviewAvarage: 4.5,
 		reviewCount: 250,
 		author: {
-			firstName: 'Samar',
-			lastName: 'Badriddinov',
+			firstName: 'Elyor',
+			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75asas',
 		},
@@ -141,8 +152,8 @@ const data: CourseType[] = [
 		reviewAvarage: 4.5,
 		reviewCount: 150,
 		author: {
-			firstName: 'Samar',
-			lastName: 'Badriddinov',
+			firstName: 'Elyor',
+			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
 		},
@@ -157,8 +168,8 @@ const data: CourseType[] = [
 		reviewAvarage: 5,
 		reviewCount: 250,
 		author: {
-			firstName: 'Samar',
-			lastName: 'Badriddinov',
+			firstName: 'Elyor',
+			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
 		},
@@ -173,8 +184,8 @@ const data: CourseType[] = [
 		reviewAvarage: 4.9,
 		reviewCount: 120,
 		author: {
-			firstName: 'Samar',
-			lastName: 'Badriddinov',
+			firstName: 'Elyor',
+			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
 		},
@@ -189,8 +200,8 @@ const data: CourseType[] = [
 		reviewAvarage: 5,
 		reviewCount: 250,
 		author: {
-			firstName: 'Samar',
-			lastName: 'Badriddinov',
+			firstName: 'Elyor',
+			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
 		},

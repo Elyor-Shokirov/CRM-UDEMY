@@ -13,8 +13,8 @@ function Layout({ children }: ChildrenProps) {
 		<div>
 			<Navbar onToggle={onToggle} />
 			<Sidebar toggle={toggle} />
-			<main className='mt-[11vh] pl-0 lg:pl-80 '>
-				<div className='container  px-3.5'>{children}</div>
+			<main className='mt-[11vh] pl-0 md:pl-80 '>
+				<div className='container mx-auto  px-3.5'>{children}</div>
 			</main>
 		</div>
 	)

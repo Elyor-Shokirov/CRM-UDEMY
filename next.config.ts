@@ -11,7 +11,12 @@ const nextConfig: NextConfig = {
 		},
 	},
 	images: {
-		domains: ['media.graphassets.com', 'genprofile.ai', 'api.dicebear.com'],
+		domains: [
+			'media.graphassets.com',
+			'genprofile.ai',
+			'api.dicebear.com',
+			'images.unsplash.com',
+		],
 	},
 }
 
