@@ -19,7 +19,7 @@ import SectionTitle from '../../_components/section-title/section-title'
 
 function PopularCourses() {
 	return (
-		<>
+		<div className='overflow-hidden'>
 			<SectionTitle
 				title='Explore Featured Courses'
 				subtitle='10,000+ unique online course list designs'
@@ -103,7 +103,7 @@ function PopularCourses() {
 				<CarouselPrevious className='left-4 bg-transparent text-white cursor-pointer' />
 				<CarouselNext className='right-4 bg-transparent text-white cursor-pointer' />
 			</Carousel>
-		</>
+		</div>
 	)
 }
 
@@ -120,7 +120,7 @@ const data: CourseType[] = [
 		reviewAvarage: 4.5,
 		reviewCount: 200,
 		author: {
-			firstName: 'Elyor',
+			firstName: 'Elyo',
 			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=%2Fimg%2Fsample%2F1414a52e-21fe-4e92-9ea6-93ff49f81011.jpeg&w=828&q=100',
@@ -136,7 +136,7 @@ const data: CourseType[] = [
 		reviewAvarage: 4.5,
 		reviewCount: 250,
 		author: {
-			firstName: 'Elyor',
+			firstName: 'Elyo',
 			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75asas',
@@ -152,7 +152,7 @@ const data: CourseType[] = [
 		reviewAvarage: 4.5,
 		reviewCount: 150,
 		author: {
-			firstName: 'Elyor',
+			firstName: 'Elyo',
 			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
@@ -168,7 +168,7 @@ const data: CourseType[] = [
 		reviewAvarage: 5,
 		reviewCount: 250,
 		author: {
-			firstName: 'Elyor',
+			firstName: 'e',
 			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
@@ -184,7 +184,7 @@ const data: CourseType[] = [
 		reviewAvarage: 4.9,
 		reviewCount: 120,
 		author: {
-			firstName: 'Elyor',
+			firstName: 'Elyo',
 			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',
@@ -200,7 +200,7 @@ const data: CourseType[] = [
 		reviewAvarage: 5,
 		reviewCount: 250,
 		author: {
-			firstName: 'Elyor',
+			firstName: 'Elyo',
 			lastName: 'Shokirov',
 			avatar:
 				'https://genprofile.ai/_next/image?url=https%3A%2F%2Fgenprofile.ai%2Fpictures%2Fuser_35tO9Q9Z1NYlFvYotXDlDFF8U8h%2Fdd8a636b-d603-4fed-a629-f4e805b5fa7e.jpeg&w=384&q=75',

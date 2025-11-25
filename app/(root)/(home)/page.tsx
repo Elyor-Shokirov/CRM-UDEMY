@@ -4,8 +4,6 @@ import HowItWorks from './_components/how-it-works'
 import Instructors from './_components/instructors'
 import Newsletter from './_components/newsletter'
 import PopularCourses from './_components/popular-courses'
-import Sponsorship from './_components/sponsorship'
-import Testimonials from './_components/testimonials'
 
 function HomePage() {
 	return (
@@ -15,9 +13,9 @@ function HomePage() {
 			<PopularCourses />
 			<HowItWorks />
 			<Instructors />
-			<Testimonials />
+			{/* <Testimonials /> */}
 			<Newsletter />
-			<Sponsorship />
+			{/* <Sponsorship /> */}
 		</div>
 	)
 }

@@ -14,7 +14,7 @@ function Layout({ children }: ChildrenProps) {
 			<Navbar onToggle={onToggle} />
 			<Sidebar toggle={toggle} />
 			<main className='mt-[11vh] pl-0 md:pl-80 '>
-				<div className='container mx-auto  px-3.5'>{children}</div>
+				<div className='w-full px-4 sm:px-8 mx-auto'>{children}</div>
 			</main>
 		</div>
 	)

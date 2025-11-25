@@ -5,6 +5,7 @@ import {
 	AiOutlineDashboard,
 	AiOutlineDollar,
 } from 'react-icons/ai'
+import { BsGoogle } from 'react-icons/bs'
 import { CiViewList } from 'react-icons/ci'
 import {
 	FaApplePay,
@@ -66,7 +67,8 @@ export const trustedCompanies = [
 	FaApplePay,
 	SiLogitech,
 	SiSpotify,
-] as const
+	BsGoogle,
+]
 
 export const OnlineTraningData = [
 	{ title: 'Signup Platform', icon: OnlineCourseIcon },

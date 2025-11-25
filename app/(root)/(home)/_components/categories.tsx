@@ -11,53 +11,49 @@ import SectionTitle from '../../_components/section-title/section-title'
 
 function Categories() {
 	return (
-		<div>
+		<div className='w-full overflow-hidden'>
 			<SectionTitle
 				title='Top categories'
 				subtitle='Learn our courses with high rating'
 			/>
-			<Carousel
-				className='min-w-full mt-4'
-				opts={{ loop: true }}
-				plugins={[
-					Autoplay({
-						delay: 2000,
-						stopOnInteraction: false,
-					}),
-				]}
-			>
-				<CarouselContent>
-					{categories.map((item, index) => {
-						const Icon = item.icon
-						return (
-							<CarouselItem
-								key={index}
-								className='lg:basis-1/5 h-auto md:basis-1/2'
-							>
-								<div className='p-1'>
-									<Card className=''>
-										<CardContent className='flex items-center justify-center '>
+			<div className='mt-4 px-4 md:px-0'>
+				<Carousel
+					className='w-full'
+					opts={{
+						loop: true,
+						align: 'start',
+					}}
+					plugins={[
+						Autoplay({
+							delay: 2000,
+							stopOnInteraction: false,
+						}),
+					]}
+				>
+					<CarouselContent className='-ml-2 md:-ml-4'>
+						{categories.map((item, index) => {
+							const Icon = item.icon
+							return (
+								<CarouselItem
+									key={index}
+									className='pl-2 md:pl-4 basis-1/1 sm:basis-1/3 md:basis-1/2 lg:basis-1/5'
+								>
+									<Card className='h-full border shadow-sm'>
+										<CardContent className='flex items-center justify-center p-4 sm:p-6'>
 											<div className='flex flex-col justify-center items-center gap-2'>
-												{/* <Image
-													src={item.icon}
-													width={70}
-													height={70}
-													alt='icons'
-													className='dark:[]'
-												/> */}
-												<Icon className='w-20 h-20 fill-[#020288] dark:fill-gray-500' />
-												<p>{item.name}</p>
+												<Icon className='w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 fill-[#020288] dark:fill-gray-500 ' />
+												<p className='text-xs sm:text-sm md:text-base text-center line-clamp-2'>
+													{item.name}
+												</p>
 											</div>
 										</CardContent>
 									</Card>
-								</div>
-							</CarouselItem>
-						)
-					})}
-				</CarouselContent>
-				{/* <CarouselPrevious />
-				<CarouselNext /> */}
-			</Carousel>
+								</CarouselItem>
+							)
+						})}
+					</CarouselContent>
+				</Carousel>
+			</div>
 		</div>
 	)
 }

@@ -10,7 +10,7 @@ function HowItWorks() {
 					subtitle='10,000+ unique online course list designs'
 				/>
 			</div>
-			<div className='grid grid-cols-5 items-center gap-4 mt-7'>
+			<div className='grid grid-cols-3 md:grid-cols-5 items-center gap-4 mt-7'>
 				{OnlineTraningData.map((item, idx) => {
 					const odd = idx % 2
 					return (
@@ -23,7 +23,7 @@ function HowItWorks() {
 									<div>{item.title}</div>
 								</div>
 							) : (
-								<div className='justify-center'>
+								<div className='flex justify-center text-base'>
 									{item.icon && <item.icon />}
 								</div>
 							)}

@@ -31,8 +31,8 @@ function Hero() {
 							</Button>
 						</div>
 					</div>
-					<div className='justify-center'>
-						<FaJava className=' w-[400px] h-[240] opacity-85' />
+					<div className='justify-center flex'>
+						<FaJava className='w-[200px] md:w-[400px] h-[240] opacity-85' />
 					</div>
 				</div>
 			</CardContent>
