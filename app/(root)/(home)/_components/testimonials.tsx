@@ -12,8 +12,8 @@ import SectionTitle from '../../_components/section-title/section-title'
 
 function Testimonials() {
 	return (
-		<>
-			<div className='text-center mt-5'>
+		<div className='overflow-hidden'>
+			<div className='text-center mt-5 '>
 				<SectionTitle
 					title='Testimonials'
 					subtitle='10,000+ unique online course list designs'
@@ -21,7 +21,7 @@ function Testimonials() {
 			</div>
 			<div className='flex justify-center'>
 				<Carousel
-					className='max-w-5xl mt-4'
+					className='w-full mt-4'
 					opts={{ loop: true }}
 					plugins={[
 						Autoplay({
@@ -32,11 +32,11 @@ function Testimonials() {
 				>
 					<CarouselContent>
 						{data.map((item, index) => (
-							<CarouselItem key={index} className='lg:basis-1/1 h-auto'>
+							<CarouselItem key={index} className='h-auto basis-1/1'>
 								<div className='text-center flex justify-center flex-col items-center'>
-									<ImQuotesRight className='text-[100px]' />
+									<ImQuotesRight className='text-[50px] md:text-[100px]' />
 									<p className='mt-5 text-center'>{item.description}</p>
-									<p className='text-xl font-bold font-roboto mt-3'>
+									<p className='text-sm font-bold md:text-xl font-roboto mt-3'>
 										{item.name}
 									</p>
 								</div>
@@ -47,7 +47,7 @@ function Testimonials() {
 					<CarouselNext className='right bg-transparent text-white cursor-pointer' />
 				</Carousel>
 			</div>
-		</>
+		</div>
 	)
 }
 

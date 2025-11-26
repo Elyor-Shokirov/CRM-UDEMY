@@ -26,10 +26,7 @@ function Sponsorship() {
 			>
 				<CarouselContent>
 					{trustedCompanies.map((Icon, index) => (
-						<CarouselItem
-							key={index}
-							className='lg:basis-1/5 h-auto md:basis-1/2'
-						>
+						<CarouselItem key={index} className='lg:basis-1/5 h-auto basis-1/3'>
 							<div className='p-1'>
 								<Icon className='w-20 h-20 fill-[#0c0c10] dark:fill-gray-200' />
 							</div>
