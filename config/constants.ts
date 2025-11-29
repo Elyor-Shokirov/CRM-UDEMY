@@ -30,34 +30,54 @@ import RightLineIcon from '../src/icons/right-line.svg'
 // Navigation menu structure
 export const navigation = [
 	{
-		title: 'General',
+		title: 'sidebar_title_1',
 		links: [
-			{ label: 'Explore', route: '/', icon: AiOutlineDashboard },
-			{ label: 'Courses', route: '/courses', icon: CiViewList },
-			{ label: 'Books', route: '/books', icon: FaBookReader },
-			{ label: 'Articles', route: '/articles', icon: MdImportContacts },
+			{
+				label: 'sidebar_title_1_explore',
+				route: '/',
+				icon: AiOutlineDashboard,
+			},
+			{ label: 'sidebar_title_1_courses', route: '/courses', icon: CiViewList },
+			{ label: 'sidebar_title_1_books', route: '/books', icon: FaBookReader },
+			{
+				label: 'sidebar_title_1_articles',
+				route: '/articles',
+				icon: MdImportContacts,
+			},
 		],
 	},
 	{
-		title: 'Pages',
+		title: 'sidebar_title_2',
 		links: [
-			{ label: 'About', route: '/about', icon: FaDraftingCompass },
-			{ label: 'Contact', route: '/contact', icon: MdOutlineContactMail },
-			{ label: 'Pricing', route: '/pricing', icon: AiOutlineDollar },
-			{ label: 'FAQ', route: '/faq', icon: FaQuestionCircle },
+			{
+				label: 'sidebar_title_2_about',
+				route: '/about',
+				icon: FaDraftingCompass,
+			},
+			{
+				label: 'sidebar_title_2_contact',
+				route: '/contact',
+				icon: MdOutlineContactMail,
+			},
+			{
+				label: 'sidebar_title_2_pricing',
+				route: '/pricing',
+				icon: AiOutlineDollar,
+			},
+			{ label: 'sidebar_title_2_faq', route: '/faq', icon: FaQuestionCircle },
 		],
 	},
 ] as const
 
 // Course categories
 export const categories = [
-	{ id: 1, name: 'Creative Design', icon: DesignIcon },
-	{ id: 2, name: 'Sales & Marketing', icon: AnnouncementIcons },
-	{ id: 3, name: 'Development & IT', icon: CodingIcons },
-	{ id: 4, name: 'Engineering & Architecture', icon: PrintIcon },
-	{ id: 5, name: 'Personal Development', icon: PersonIcon },
-	{ id: 5, name: 'Personal Development', icon: PersonIcon },
-	{ id: 6, name: 'Finance & Accounting', icon: LaptopIcon },
+	{ id: 1, name: 'design_category', icon: DesignIcon },
+	{ id: 2, name: 'sales_marketing_category', icon: AnnouncementIcons },
+	{ id: 3, name: 'development_it_category', icon: CodingIcons },
+	{ id: 4, name: 'engineering_architecture_category', icon: PrintIcon },
+	{ id: 5, name: 'personl_development_category', icon: PersonIcon },
+	{ id: 5, name: 'personl_development_category', icon: PersonIcon },
+	{ id: 6, name: 'finance_accounting_category', icon: LaptopIcon },
 ] as const
 // Trusted companies / partners logos (as React components)
 export const trustedCompanies = [
@@ -71,9 +91,15 @@ export const trustedCompanies = [
 ]
 
 export const OnlineTraningData = [
-	{ title: 'Signup Platform', icon: OnlineCourseIcon },
+	{ title: 'how_it_works_first_step', icon: OnlineCourseIcon },
 	{ icon: RightLineIcon },
-	{ title: 'Find Courses', icon: OnlineLearningIcon },
+	{ title: 'how_it_works_second_step', icon: OnlineLearningIcon },
 	{ icon: FinishRightIcon },
-	{ title: 'Learn Relaxing', icon: OnlineStudentIcon },
+	{ title: 'how_it_works_third_step', icon: OnlineStudentIcon },
+]
+export const language = [
+	{ nativeLng: 'English', lng: 'en', icon: '/icons/eng.svg' },
+	{ nativeLng: "O'zbek", lng: 'uz', icon: '/icons/uzb.svg' },
+	{ nativeLng: 'Türkçe', lng: 'tr', icon: '/icons/turk.svg' },
+	{ nativeLng: 'Русский', lng: 'ru', icon: '/icons/rus.svg' },
 ]

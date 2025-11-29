@@ -1,3 +1,5 @@
+'use client'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlinePlayCircle } from 'react-icons/ai'
@@ -5,11 +7,12 @@ import { FaUserGraduate } from 'react-icons/fa'
 import SectionTitle from '../../_components/section-title/section-title'
 
 function Instructors() {
+	const t = useTranslations('home')
 	return (
 		<div>
 			<SectionTitle
-				title='Learn from the best instructors'
-				subtitle='All our mentor with high experienced'
+				title={t('instructor_title')}
+				subtitle={t('instructor_description')}
 			/>
 			<div className='grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-5'>
 				{data.map((item, idx) => (
@@ -42,13 +45,13 @@ function Instructors() {
 				))}
 			</div>
 			<div className='mt-4 text-center flex justify-center gap-2 font-roboto'>
-				<p>Want to help people learn, grow and achieve more in life?</p>
+				<p>{t('instructor_link_title')}</p>
 				{''}
 				<Link
 					className='text-green-800 hover:underline font-roboto'
 					href={'/become-instructor'}
 				>
-					Become an instructor
+					{t('instructor_link_router')}
 				</Link>
 			</div>
 		</div>

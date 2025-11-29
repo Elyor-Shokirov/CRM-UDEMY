@@ -11,6 +11,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { CourseType } from '@/types'
 import Autoplay from 'embla-carousel-autoplay'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { CiViewList } from 'react-icons/ci'
@@ -18,11 +19,13 @@ import { SiGoogleanalytics } from 'react-icons/si'
 import SectionTitle from '../../_components/section-title/section-title'
 
 function PopularCourses() {
+	const t = useTranslations('home')
+
 	return (
 		<div className='overflow-hidden'>
 			<SectionTitle
-				title='Explore Featured Courses'
-				subtitle='10,000+ unique online course list designs'
+				title={t('popular_courses_title')}
+				subtitle={t('popular_courses_description')}
 			/>
 			<Carousel
 				className='min-w-full mt-4'

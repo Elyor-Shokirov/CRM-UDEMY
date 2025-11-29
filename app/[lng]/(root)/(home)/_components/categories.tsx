@@ -7,14 +7,16 @@ import {
 } from '@/components/ui/carousel'
 import { categories } from '@/config/constants'
 import Autoplay from 'embla-carousel-autoplay'
+import { useTranslations } from 'next-intl'
 import SectionTitle from '../../_components/section-title/section-title'
 
 function Categories() {
+	const t = useTranslations('home')
 	return (
 		<div className='w-full overflow-hidden'>
 			<SectionTitle
-				title='Top categories'
-				subtitle='Learn our courses with high rating'
+				title={t('category_title')}
+				subtitle={t('category_description')}
 			/>
 			<div className='mt-4 px-4 md:px-0'>
 				<Carousel
@@ -43,7 +45,7 @@ function Categories() {
 											<div className='flex flex-col justify-center items-center gap-2'>
 												<Icon className='w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 fill-[#020288] dark:fill-gray-500 ' />
 												<p className='text-xs sm:text-sm md:text-base text-center line-clamp-2'>
-													{item.name}
+													{t(item.name)}
 												</p>
 											</div>
 										</CardContent>

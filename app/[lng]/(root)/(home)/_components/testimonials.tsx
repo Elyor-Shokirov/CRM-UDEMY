@@ -7,16 +7,18 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
+import { useTranslations } from 'next-intl'
 import { ImQuotesRight } from 'react-icons/im'
 import SectionTitle from '../../_components/section-title/section-title'
 
 function Testimonials() {
+	const t = useTranslations('home')
 	return (
 		<div className='overflow-hidden'>
 			<div className='text-center mt-5 '>
 				<SectionTitle
-					title='Testimonials'
-					subtitle='10,000+ unique online course list designs'
+					title={t('testimonials_title')}
+					subtitle={t('testimonials_description')}
 				/>
 			</div>
 			<div className='flex justify-center'>

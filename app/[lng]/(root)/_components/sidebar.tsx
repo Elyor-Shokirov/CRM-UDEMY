@@ -1,12 +1,14 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { navigation } from '@/config/constants'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SidebarProps } from './props'
 
 function Sidebar({ toggle }: SidebarProps) {
 	const pathname = usePathname()
+	const t = useTranslations('layout')
 
 	return (
 		<div
@@ -24,7 +26,7 @@ function Sidebar({ toggle }: SidebarProps) {
 			<div className='p-4'>
 				{navigation.map(item => (
 					<div key={item.title}>
-						<p>{item.title}</p>
+						<p>{t(item.title)}</p>
 						{item.links.map(nav => {
 							const active = pathname == nav.route
 							return (
@@ -34,7 +36,7 @@ function Sidebar({ toggle }: SidebarProps) {
 										variant={active ? 'default' : 'ghost'}
 									>
 										<nav.icon size={40} className='mr-2' />
-										{nav.label}
+										{t(nav.label)}
 									</Button>
 								</Link>
 							)

@@ -1,5 +1,8 @@
+'use client' // ← Bu qatorni eng yuqoriga qo'shing!
+
 import ModeToggle from '@/components/shared/mode-toggle'
 import { Button } from '@/components/ui/button'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { BiMenuAltLeft, BiUserCircle } from 'react-icons/bi'
 import { MdOutlineContactSupport } from 'react-icons/md'
@@ -7,8 +10,10 @@ import { HeaderProp } from './props'
 import TranslateButton from './translate-button'
 
 function Navbar({ onToggle }: HeaderProp) {
+	const t = useTranslations('layout')
+
 	return (
-		<div className='w-full h-[10vh] px-10 flex items-center border dark:border-b-gray-700 border-b-gray-200 fixed  top-0 left-0 right-0 dark:bg-[#171923] bg-gray-50 z-60'>
+		<div className='w-full h-[10vh] px-10 flex items-center border dark:border-b-gray-700 border-b-gray-200 fixed  top-0 left-0 right-0 dark:bg-[#171923] bg-gray-50 z-40'>
 			<div className='flex justify-between w-full'>
 				<div className='flex items-center gap-2'>
 					<BiMenuAltLeft
@@ -44,7 +49,7 @@ function Navbar({ onToggle }: HeaderProp) {
 					<ModeToggle />
 					<Button variant={'secondary'} className='cursor-pointer'>
 						<BiUserCircle />
-						Login
+						{t('login')}
 					</Button>
 				</div>
 			</div>

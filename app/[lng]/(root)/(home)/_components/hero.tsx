@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import {
 	Card,
@@ -5,29 +6,29 @@ import {
 	CardDescription,
 	CardTitle,
 } from '@/components/ui/card'
+import { useTranslations } from 'next-intl'
 import { FaJava } from 'react-icons/fa'
 import { VscDebugStart } from 'react-icons/vsc'
 
 function Hero() {
+	const t = useTranslations('home')
+
 	return (
 		<Card className='mt-10 min-h-[50vh] justify-center items-center'>
 			<CardContent className='p-4'>
 				<div className='grid gap-5  grid-cols-1 md:grid-cols-2 h-full'>
 					<div className='grid justify-center items-center'>
 						<CardTitle className='text-xl md:text-5xl'>
-							Find A Perfect Online Course
+							{t('hero_title')}
 						</CardTitle>
-						<CardDescription>
-							You can access 7900+ different courses from 600 professional
-							trainers for free
-						</CardDescription>
+						<CardDescription>{t('hero_description')}</CardDescription>
 						<div className='grid gap-5 grid-cols-1 md:grid-cols-2 mt-4'>
 							<Button className='p-6' variant={'default'}>
-								Start Learning
+								{t('hero_start_learning_btn')}
 								<VscDebugStart />
 							</Button>
 							<Button className='p-6' variant={'outline'}>
-								Becom Instructor
+								{t('hero_become_instructor_btn')}
 							</Button>
 						</div>
 					</div>
