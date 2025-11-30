@@ -11,13 +11,17 @@ function Layout({ children }: ChildrenProps) {
 	const onToggle = () => setToggle(prev => !prev)
 
 	return (
-		<div>
-			<Navbar onToggle={onToggle} />
+		<div className='flex'>
+			{/* LEFT SIDEBAR — FIXED */}
 			<Sidebar toggle={toggle} />
-			<main className='mt-[11vh] pl-0 md:pl-80 '>
-				<div className='w-full px-4 sm:px-8 mx-auto'>{children}</div>
-			</main>
-			<Footer />
+
+			<div className='flex flex-col min-h-screen flex-1 ml-0 md:pl-[299px]'>
+				<Navbar onToggle={onToggle} />
+
+				<main className='flex-1 mt-[11vh] px-4 sm:px-8'>{children}</main>
+
+				<Footer />
+			</div>
 		</div>
 	)
 }

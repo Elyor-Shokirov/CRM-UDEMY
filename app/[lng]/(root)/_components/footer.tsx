@@ -7,7 +7,7 @@ function Footer() {
 	const t = useTranslations('layout')
 
 	return (
-		<div className='pl-0 md:pl-80 w-full h-[10vh] px-10 flex items-center border dark:border-t-gray-700 border-t-gray-200  top-0 left-0 right-0 dark:bg-[#171923] bg-gray-50 z-60 mt-10'>
+		<div className='pl-2 md:pl-5 w-full h-[10vh] px-10 flex items-center border dark:border-t-gray-700 border-t-gray-200  top-0 left-0 right-0 dark:bg-[#171923] bg-gray-50 z-60 mt-10'>
 			<div className='flex justify-between items-center w-full'>
 				<div>
 					<p>
