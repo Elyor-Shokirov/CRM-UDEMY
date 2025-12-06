@@ -13,9 +13,9 @@ function AllCoursesCard({ course }: AllCoursesCardProps) {
 	return (
 		<>
 			<div className='p-4'>
-				<div className='flex gap-4'>
+				<div className='flex md:flex-row flex-col gap-4'>
 					<Image
-						className='rounded-xl object-cover'
+						className='rounded-xl object-cover w-full md:w-[250px] h-[200px] md:h-[250px]'
 						src={course.image}
 						alt={course.title}
 						width={250}
@@ -34,7 +34,7 @@ function AllCoursesCard({ course }: AllCoursesCardProps) {
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							Distinctio molestias, officiis, qui fuga deleniti dolor voluptas
 						</p>
-						<div className='flex items-center gap-3'>
+						<div className='flex md:flex-row flex-col items-start md:items-center gap-3'>
 							<div className='flex gap-1.5 items-center'>
 								<Avatar>
 									<AvatarImage

@@ -9,6 +9,9 @@ import { SidebarProps } from './props'
 function Sidebar({ toggle }: SidebarProps) {
 	const pathname = usePathname()
 	const t = useTranslations('layout')
+	console.log('pathname', pathname)
+
+	const cleanPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/' // /faq
 
 	return (
 		<div
@@ -28,9 +31,17 @@ function Sidebar({ toggle }: SidebarProps) {
 					<div key={item.title}>
 						<p>{t(item.title)}</p>
 						{item.links.map(nav => {
-							const active = pathname == nav.route
+							const pathWithoutLocale = pathname.replace(
+								/^\/[a-z]{2}(\/|$)/,
+								'/'
+							)
+							const normalizedRoute = nav.route.startsWith('/')
+								? nav.route
+								: `/${nav.route}`
+
+							const active = pathWithoutLocale === normalizedRoute
 							return (
-								<Link key={nav.label} href={`/${nav.route}`}>
+								<Link key={nav.label} href={`${nav.route}`}>
 									<Button
 										className='w-full justify-start h-3.5 mt-2 cursor-pointer gap-2 p-7'
 										variant={active ? 'default' : 'ghost'}

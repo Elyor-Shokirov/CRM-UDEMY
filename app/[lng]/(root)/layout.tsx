@@ -15,7 +15,7 @@ function Layout({ children }: ChildrenProps) {
 			{/* LEFT SIDEBAR — FIXED */}
 			<Sidebar toggle={toggle} />
 
-			<div className='flex flex-col min-h-screen flex-1 ml-0 md:pl-[299px]'>
+			<div className='flex flex-col min-h-screen flex-1 ml-0 lg:pl-[299px]'>
 				<Navbar onToggle={onToggle} />
 
 				<main className='flex-1 mt-[11vh] px-4 sm:px-8'>{children}</main>

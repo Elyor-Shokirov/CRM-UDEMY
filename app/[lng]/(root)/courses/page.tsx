@@ -22,24 +22,21 @@ function Coursepage() {
 
 	return (
 		<>
-			<SectionTitle
-				title='All Courses'
-				subtitle='Write an introductory description of the category'
-			/>
+			<SectionTitle title={t('title')} subtitle={t('description')} />
 			<div className='relative mt-5'>
 				<Input
 					className='h-14 w-full text-gray-800 text-xl'
-					placeholder='Search'
+					placeholder={t('search_input_placeholder')}
 				/>
 				<Button
 					className='right-2 absolute top-2 cursor-pointer bg-gray-700 text-white hover:bg-gray-600'
 					variant={'secondary'}
 				>
-					submit
+					{t('search_input_btn')}
 				</Button>
 			</div>
-			<div className='flex gap-5 mt-5'>
-				<div className='w-[30%]'>
+			<div className='flex flex-col lg:flex-row gap-5 mt-5'>
+				<div className='w-full lg:w-[30%] flex flex-col gap-5'>
 					<Card>
 						<CardContent>
 							{coursesFilter.map((item, idx) => (
@@ -48,7 +45,7 @@ function Coursepage() {
 						</CardContent>
 					</Card>
 				</div>
-				<div className='w-[70%]'>
+				<div className='w-full lg:w-[70%]'>
 					{courses.map(item => (
 						<AllCoursesCard key={item.title} course={item} />
 					))}
