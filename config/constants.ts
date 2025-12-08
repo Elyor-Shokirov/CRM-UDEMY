@@ -249,13 +249,14 @@ export const booksCategory = [
 		label: 'filter_all_category',
 		id: 'all-categories',
 	},
-	{
-		label: 'filter_programmin',
-		id: 'programming',
-	},
+
 	{
 		label: 'filter_design',
 		id: 'design',
+	},
+	{
+		label: 'filter_programmin',
+		id: 'programming',
 	},
 	{
 		label: 'filter_business',
