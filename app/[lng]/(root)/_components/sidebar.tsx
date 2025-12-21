@@ -9,9 +9,9 @@ import { SidebarProps } from './props'
 function Sidebar({ toggle }: SidebarProps) {
 	const pathname = usePathname()
 	const t = useTranslations('layout')
-	console.log('pathname', pathname)
 
-	const cleanPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/' // /faq
+	// Locale ni olish
+	const locale = pathname.split('/')[1] // uz, en, tr
 
 	return (
 		<div
@@ -22,8 +22,8 @@ function Sidebar({ toggle }: SidebarProps) {
 		border fixed top-0 left-0 mt-[10vh] 
 		overflow-y-auto scrollbar-thin 
 		transition-all duration-500 ease-in-out z-30
-		${toggle ? 'translate-x-0' : '-translate-x-full'}  /* mobile/tablet toggle */
-		lg:translate-x-0  /* desktopda sidebar doim ochiq */
+		${toggle ? 'translate-x-0' : '-translate-x-full'}
+		lg:translate-x-0
 	`}
 		>
 			<div className='p-4'>
@@ -31,17 +31,20 @@ function Sidebar({ toggle }: SidebarProps) {
 					<div key={item.title}>
 						<p>{t(item.title)}</p>
 						{item.links.map(nav => {
-							const pathWithoutLocale = pathname.replace(
-								/^\/[a-z]{2}(\/|$)/,
-								'/'
-							)
+							const pathWithoutLocale =
+								pathname.replace(/^\/[a-z]{2}/, '') || '/'
+
 							const normalizedRoute = nav.route.startsWith('/')
 								? nav.route
 								: `/${nav.route}`
 
-							const active = pathWithoutLocale === normalizedRoute
+							const active =
+								pathWithoutLocale === normalizedRoute ||
+								(normalizedRoute !== '/' &&
+									pathWithoutLocale.startsWith(normalizedRoute + '/'))
+
 							return (
-								<Link key={nav.label} href={`${nav.route}`}>
+								<Link key={nav.label} href={`/${locale}${normalizedRoute}`}>
 									<Button
 										className='w-full justify-start h-3.5 mt-2 cursor-pointer gap-2 p-7'
 										variant={active ? 'default' : 'ghost'}

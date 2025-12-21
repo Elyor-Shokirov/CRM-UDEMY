@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Geist, Geist_Mono, Montserrat, Roboto } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
 import './globals.css'
 
 const geistSans = Geist({
@@ -48,6 +49,12 @@ export default async function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} ${fontRoboto.variable} ${fontMonseratti.variable} antialiased`}
 			>
 				<NextIntlClientProvider messages={messages} locale={lng}>
+					<NextTopLoader
+						color='#016461'
+						height={5}
+						showSpinner={false}
+						speed={200}
+					/>
 					<ThemeProvider
 						attribute='class'
 						defaultTheme='system'

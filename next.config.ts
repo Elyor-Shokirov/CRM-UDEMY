@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
 			'online.stanford.edu',
 			'images.unsplash.com',
 			'wallpapercave.com',
+			'us-west-2.graphassets.com',
 		],
 	},
 }

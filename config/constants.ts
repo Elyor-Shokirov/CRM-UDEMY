@@ -42,7 +42,7 @@ export const navigation = [
 			{ label: 'sidebar_title_1_books', route: 'books', icon: FaBookReader },
 			{
 				label: 'sidebar_title_1_articles',
-				route: 'articles',
+				route: '/articles',
 				icon: MdImportContacts,
 			},
 		],
