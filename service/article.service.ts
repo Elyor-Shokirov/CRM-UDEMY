@@ -35,4 +35,36 @@ export const Articles = {
 		)
 		return result.articles
 	},
+
+	async getDetailedArticle(slug: string): Promise<ArticleType> {
+		const query = gql`
+			query DetailedArticle($slug: String!) {
+				article(where: { slug: $slug }) {
+					id
+					image {
+						url
+					}
+					title
+					slug
+					createdAt
+					exerpt
+					language
+					author {
+						name
+						avatar {
+							url
+						}
+					}
+					description {
+						text
+						raw
+					}
+				}
+			}
+		`
+		const result = await request<{ article: ArticleType }>(graphqlAPI, query, {
+			slug,
+		})
+		return result.article
+	},
 }

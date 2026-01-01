@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
 		},
 	},
 	images: {
+		// Eski kod bilan mos kelish uchun
 		domains: [
 			'media.graphassets.com',
 			'genprofile.ai',
@@ -25,13 +26,18 @@ const nextConfig: NextConfig = {
 			'wbsimms.com',
 			'wallpaperaccess.com',
 			'images5.alphacoders.com',
-			'wallpaperaccess.com',
 			'img.freepik.com',
 			'c0.wallpaperflare.com',
 			'online.stanford.edu',
-			'images.unsplash.com',
 			'wallpapercave.com',
 			'us-west-2.graphassets.com',
+		],
+		// Yangi domenlar uchun
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: '**', // Barcha qolgan domenlar
+			},
 		],
 	},
 }

@@ -8,7 +8,7 @@ export interface ArticleType {
 	slug: string
 	title: string
 	language: string
-	author: AuthorType // Optional
+	author: AuthorType
 	description: {
 		text: string
 		raw: {
