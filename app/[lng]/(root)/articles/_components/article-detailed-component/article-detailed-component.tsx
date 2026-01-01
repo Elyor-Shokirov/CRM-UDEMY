@@ -10,12 +10,22 @@ import Image from 'next/image'
 const isImageUrl = (url: string) =>
 	/\.(jpg|jpeg|png|gif|webp|svg|bmp)(\?.*)?$/i.test(url)
 
+interface ImageProps {
+	url?: string
+	alt?: string
+	width?: number
+	height?: number
+	src?: string
+	href?: string
+	children?: React.ReactNode
+}
+
 // RichText renderers
 const richTextRenderers = {
 	Asset: {
-		image: (props: any) => (
+		image: (props: ImageProps) => (
 			<Image
-				src={props.url}
+				src={props.url || ''}
 				alt={props.alt || 'Article image'}
 				width={props.width || 1200}
 				height={props.height || 600}
@@ -23,16 +33,16 @@ const richTextRenderers = {
 			/>
 		),
 	},
-	img: (props: any) => (
+	img: (props: ImageProps) => (
 		<Image
-			src={props.src}
+			src={props.src || ''}
 			alt={props.alt || 'Image'}
 			width={props.width || 1200}
 			height={props.height || 600}
 			className='rounded-lg my-6 w-full h-auto'
 		/>
 	),
-	a: (props: any) => {
+	a: (props: ImageProps) => {
 		if (props.href && isImageUrl(props.href)) {
 			return (
 				<Image

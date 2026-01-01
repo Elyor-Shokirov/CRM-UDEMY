@@ -1,5 +1,7 @@
+import AboutPageComponent from './_components/aboutPage-component'
+
 function AboutPage() {
-	return <div>AboutPage</div>
+	return <AboutPageComponent />
 }
 
 export default AboutPage

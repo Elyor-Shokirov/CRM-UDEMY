@@ -20,6 +20,7 @@ async function loadMessages(locale: Locale) {
 		courses: () => import(`../locale/${locale}/courses.json`),
 		books: () => import(`../locale/${locale}/books.json`),
 		articles: () => import(`../locale/${locale}/articles`),
+		global: () => import(`../locale/${locale}/global.json`),
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
