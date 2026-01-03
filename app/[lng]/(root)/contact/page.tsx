@@ -1,5 +1,7 @@
+import ContactPageComponent from './_components/contactPage-component'
+
 function ContactPage() {
-	return <div>ContactPage</div>
+	return <ContactPageComponent />
 }
 
 export default ContactPage

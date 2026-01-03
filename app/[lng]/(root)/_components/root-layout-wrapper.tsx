@@ -1,11 +1,18 @@
 'use client'
+
 import { ChildrenProps } from '@/types'
 import { useState } from 'react'
-import Footer from './_components/footer'
-import Navbar from './_components/navbar'
-import Sidebar from './_components/sidebar'
+import Navbar from './navbar'
+import Sidebar from './sidebar'
 
-function Layout({ children }: ChildrenProps) {
+interface RootLayoutWrapperProps extends ChildrenProps {
+	footer: React.ReactNode // server component
+}
+
+export function RootLayoutWrapper({
+	children,
+	footer,
+}: RootLayoutWrapperProps) {
 	const [toggle, setToggle] = useState<boolean>(false)
 
 	const onToggle = () => setToggle(prev => !prev)
@@ -16,10 +23,8 @@ function Layout({ children }: ChildrenProps) {
 			<div className='flex flex-col min-h-screen flex-1 ml-0 lg:pl-[299px]'>
 				<Navbar onToggle={onToggle} />
 				<main className='flex-1 mt-[11vh] px-4 sm:px-8'>{children}</main>
-				<Footer />
+				{footer}
 			</div>
 		</div>
 	)
 }
-
-export default Layout

@@ -1,15 +1,22 @@
 import createMiddleware from 'next-intl/middleware'
+import { NextRequest } from 'next/server'
 
-export default createMiddleware({
-	locales: ['uz', 'en', 'ru', 'tr'], // ← ru qo'shildi
+const intlMiddleware = createMiddleware({
+	locales: ['uz', 'en', 'ru', 'tr'],
 	defaultLocale: 'uz',
 	localePrefix: 'always',
 })
+
+export default function middleware(request: NextRequest) {
+	const response = intlMiddleware(request)
+	response.headers.set('x-pathname', request.nextUrl.pathname)
+
+	return response
+}
+
 export const config = {
 	matcher: [
-		// Skip Next.js internals and all static files, unless found in search params
 		'/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-		// Always run for API routes
 		'/(api|trpc)(.*)',
 	],
 }
