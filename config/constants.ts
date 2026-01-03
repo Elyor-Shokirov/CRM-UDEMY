@@ -275,3 +275,57 @@ export const booksCategory = [
 		id: 'lifestyle',
 	},
 ]
+
+export const faq = [
+	{
+		question: 'faq_question_1',
+		answer: 'faq_answer_1',
+	},
+	{
+		question: 'faq_question_2',
+		answer: 'faq_answer_2',
+	},
+	{
+		question: 'faq_question_3',
+		answer: 'faq_answer_3',
+	},
+	{
+		question: 'faq_question_4',
+		answer: 'faq_answer_4',
+	},
+	{
+		question: 'faq_question_5',
+		answer: 'faq_answer_5',
+	},
+	{
+		question: 'faq_question_6',
+		answer: 'faq_answer_6',
+	},
+	{
+		question: 'faq_question_7',
+		answer: 'faq_answer_7',
+	},
+]
+
+export const avatars = [
+	{
+		name: 'Ryan Florence',
+		url: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NTYyNDV8MHwxfHNlYXJjaHw3fHxBdmF0YXJ8ZW58MHx8fHwxNzY3NDcwMDA0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+	},
+	{
+		name: 'Segun Adebayo',
+		url: 'https://images.unsplash.com/photo-1728577740843-5f29c7586afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NTYyNDV8MHwxfHNlYXJjaHw0fHxBdmF0YXJ8ZW58MHx8fHwxNzY3NDcwMDA0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+	},
+	{
+		name: 'Kent Dodds',
+		url: 'https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NTYyNDV8MHwxfHNlYXJjaHwxN3x8QXZhdGFyfGVufDB8fHx8MTc2NzQ3MDA2NXww&ixlib=rb-4.1.0&q=80&w=1080',
+	},
+	{
+		name: 'Prosper Otemuyiwa',
+		url: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NTYyNDV8MHwxfHNlYXJjaHwxfHxBdmF0YXJ8ZW58MHx8fHwxNzY3NDcwMDA0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+	},
+	{
+		name: 'Christian Nwamba',
+		url: 'https://images.unsplash.com/photo-1654110455429-cf322b40a906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NTYyNDV8MHwxfHNlYXJjaHw2fHxBdmF0YXJ8ZW58MHx8fHwxNzY3NDcwMDA0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+	},
+]

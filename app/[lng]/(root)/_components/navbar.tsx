@@ -4,12 +4,15 @@ import ModeToggle from '@/components/shared/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { BiMenuAltLeft, BiUserCircle } from 'react-icons/bi'
 import { MdOutlineContactSupport } from 'react-icons/md'
 import { HeaderProp } from './props'
 import TranslateButton from './translate-button'
 
 function Navbar({ onToggle }: HeaderProp) {
+	const router = useRouter()
 	const t = useTranslations('layout')
 
 	return (
@@ -20,20 +23,22 @@ function Navbar({ onToggle }: HeaderProp) {
 						className='text-xl md:text-2xl lg:text-2xl cursor-pointer'
 						onClick={onToggle}
 					/>
-					<Image
-						src='/icons/dark-logo.svg'
-						width={140}
-						height={80}
-						alt='Logo'
-						className='block dark:hidden w-20 sm:w-28 md:w-32 lg:w-36'
-					/>
-					<Image
-						src='/icons/light-logo.svg'
-						width={140}
-						height={80}
-						alt='Logo'
-						className='hidden dark:block w-20 sm:w-28 md:w-32 lg:w-36'
-					/>
+					<Link href='/'>
+						<Image
+							src='/icons/dark-logo.svg'
+							width={140}
+							height={80}
+							alt='Logo'
+							className='block dark:hidden w-20 sm:w-28 md:w-32 lg:w-36'
+						/>
+						<Image
+							src='/icons/light-logo.svg'
+							width={140}
+							height={80}
+							alt='Logo'
+							className='hidden dark:block w-20 sm:w-28 md:w-32 lg:w-36'
+						/>
+					</Link>
 				</div>
 
 				<div className='flex  gap-2 items-center'>
@@ -47,7 +52,11 @@ function Navbar({ onToggle }: HeaderProp) {
 					</Button>
 					<TranslateButton />
 					<ModeToggle />
-					<Button variant={'secondary'} className='cursor-pointer'>
+					<Button
+						variant={'secondary'}
+						className='cursor-pointer'
+						onClick={() => router.push('/auth')}
+					>
 						<BiUserCircle />
 						{t('login')}
 					</Button>
