@@ -11,17 +11,20 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useShowPassword } from '@/hooks/useShowPassword'
 import { loginFormSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Eye, EyeOff } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
 import { LoginProps } from './props/login.props'
 
 function Login({ onNavigateStateComponent }: LoginProps) {
-	const [showPassword, setShowPassword] = useState(false)
+	const { showPassword, toggleShow } = useShowPassword()
 	const [isLoading, setIsLoading] = useState(false)
+	const t = useTranslations('global')
 
 	const form = useForm<z.infer<typeof loginFormSchema>>({
 		resolver: zodResolver(loginFormSchema),
@@ -42,14 +45,13 @@ function Login({ onNavigateStateComponent }: LoginProps) {
 	return (
 		<div className='space-y-4'>
 			<h1 className='text-gray-900 dark:text-gray-200 text-2xl sm:text-3xl md:text-4xl font-bold'>
-				Login{' '}
+				{t('login_title')}
 				<span className='bg-gradient-to-r from-gray-400 to-blue-500 bg-clip-text text-transparent'>
 					!
 				</span>
 			</h1>
 			<p className='text-gray-500 text-sm sm:text-base'>
-				We`re happy to see you again on our platform, for getting more
-				experience please sign in on your account
+				{t('login_description')}
 			</p>
 
 			<Form {...form}>
@@ -60,7 +62,7 @@ function Login({ onNavigateStateComponent }: LoginProps) {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel className='text-sm font-semibold dark:text-white text-gray-700 flex items-center gap-1'>
-									<span>Email address</span>
+									<span>{t('login_input_email_label')}</span>
 									<span className='text-red-500'>*</span>
 								</FormLabel>
 								<FormControl>
@@ -83,7 +85,7 @@ function Login({ onNavigateStateComponent }: LoginProps) {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel className='text-sm font-semibold dark:text-white text-gray-700 flex items-center gap-1'>
-									<span>Password</span>
+									<span>{t('login_input_password_label')}</span>
 									<span className='text-red-500'>*</span>
 								</FormLabel>
 								<FormControl>
@@ -97,7 +99,7 @@ function Login({ onNavigateStateComponent }: LoginProps) {
 										/>
 										<button
 											type='button'
-											onClick={() => setShowPassword(!showPassword)}
+											onClick={() => toggleShow()}
 											disabled={isLoading}
 											className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none'
 											aria-label={
@@ -121,14 +123,14 @@ function Login({ onNavigateStateComponent }: LoginProps) {
 						<div className='flex justify-between gap-3'>
 							<Checkbox id='terms-2' className='text-4xl' />
 							<div className='grid gap-2'>
-								<Label htmlFor='terms-2'>Remember me</Label>
+								<Label htmlFor='terms-2'>{t('auth_remember_me')}</Label>
 							</div>
 						</div>
 						<button
 							type='button'
 							className='text-sm text-[#7788cb] hover:underline font-medium cursor-pointer'
 						>
-							Forgot password?
+							{t('auth_forgot_password')}
 						</button>
 					</div>
 
@@ -159,18 +161,18 @@ function Login({ onNavigateStateComponent }: LoginProps) {
 								Signing in...
 							</span>
 						) : (
-							'Sign in'
+							t('login_btn')
 						)}
 					</Button>
 
 					<p className='text-center text-sm text-gray-600 dark:text-gray-400 mr-3'>
-						Don`t have an account?
+						{t('login_not_account_yet')}
 						<button
 							type='button'
 							onClick={() => onNavigateStateComponent('register')}
 							className='text-[#6176cd] hover:underline font-semibold ml-2 cursor-pointer'
 						>
-							Register
+							{t('login_redirect_to_register')}
 						</button>
 					</p>
 				</form>

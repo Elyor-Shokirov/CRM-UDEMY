@@ -1,5 +1,6 @@
 'use client'
 import { avatars } from '@/config/constants'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import AuthNavbarComponent from './auth-navbar-component'
@@ -10,8 +11,9 @@ import Verification from './verification'
 
 const AuthPageComponent = () => {
 	const [state, setState] = useState<'login' | 'register' | 'verification'>(
-		'login'
+		'verification'
 	)
+	const t = useTranslations('global')
 
 	const onNavigateStateComponent = (
 		component: 'login' | 'register' | 'verification'
@@ -36,11 +38,11 @@ const AuthPageComponent = () => {
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-32 '>
 						<div className='space-y-10 md:space-y-20'>
 							<h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight'>
-								Senior web designers
+								{t('auth_page_title_1')}
 								<span className='bg-linear-to-r from-gray-400 to-blue-500 bg-clip-text text-transparent'>
 									&
 								</span>{' '}
-								Stack developers
+								{t('auth_page_title_2')}
 							</h1>
 
 							<div className='flex items-center gap-4'>
@@ -71,7 +73,7 @@ const AuthPageComponent = () => {
 								<div className='relative'>
 									<div className='absolute inset-0 bg-gradient-to-bl from-gray-400 to-blue-500 rounded-full scale-110' />
 									<div className='relative bg-gray-800 text-white rounded-full w-11 h-11 md:w-16 md:h-16 flex items-center justify-center text-sm md:text-lg font-medium'>
-										You
+										{t('auth_page_you')}
 									</div>
 								</div>
 							</div>
